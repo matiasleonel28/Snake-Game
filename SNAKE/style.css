@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('ASSETS/Fondo-Jungla.avif') no-repeat center center/cover;
+
+}
+
+.wrapper {
+    width: 65vmin;
+    height: 70vmin;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(41, 52, 71, 0.9);
+    box-shadow: 0 10 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque */
+}
+
+.game-details {
+    color: #b8c6dc;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    background: #1a232e;
+    border-bottom: 2px solid #2c3a4d;
+    text-transform: uppercase;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.play-board {
+    width: 100%;
+    height: 100%;
+    background: #212837;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.play-board .food {
+    animation: float 2s ease-in-out infinite;
+    background: radial-gradient(circle, #ff6b6b, #ff003d);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 0, 61, 0.8), 0 0 30px rgba(255, 107, 107, 0.6);
+    animation: pop 0.3s ease-in-out;
+}
+
+.play-board .head {
+    background: #4caf50;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+    transition: all 0.1s ease-in-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#reset-button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 1px 12px;
+    /* Más pequeño */
+    border-radius: 20px;
+    /* Bordes más redondeados */
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    /* Tamaño de fuente más pequeño */
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+#reset-button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+    /* Efecto de escala al pasar el mouse */
+}
+
+#reset-button:active {
+    transform: scale(0.95);
+    /* Efecto de clic */
+}
